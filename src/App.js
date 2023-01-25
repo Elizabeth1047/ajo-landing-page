@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Nav from './components/Nav';
+import Header from './components/Header';
+import Section1 from './components/Section1';
+import Section2 from './components/Section2';
+import Section3 from './components/Section3';
+import Footer from './components/Footer';
+import Toplayer from './components/Toplayer';
+import Hambuger from './components/Hambuger';
 
 function App() {
+const [showhambuger,setshowhambuger]=useState(false)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav
+        setshowhambuger={setshowhambuger}
+        showhambuger={showhambuger}
+      />
+      <Header />
+      <Section1 />
+      <Section2 />
+      <Section3 />
+      <Footer />
+      <Toplayer />
+      {showhambuger ? <Hambuger /> : null}
     </div>
   );
 }
